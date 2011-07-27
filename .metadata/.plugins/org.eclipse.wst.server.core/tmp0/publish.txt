@@ -1,3 +1,2 @@
 #Tomcat publish data
-#Wed Jul 27 20:25:41 BRT 2011
-org.eclipse.jst.jee.server\:/binary\:/home/web2183/projects/Caelum-FJ21/fj22-tarefas/WebContent/WEB-INF/lib/freemarker-2.3.15.jar=WEB-INF/lib/freemarker-2.3.15.jar
+#Wed Jul 27 20:39:53 BRT 2011
