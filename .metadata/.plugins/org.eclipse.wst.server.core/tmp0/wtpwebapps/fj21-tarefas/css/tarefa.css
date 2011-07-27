@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.errorMessage  { color: red; text-decoration: none; outline: none; }
+
+.descricao {background-color: red; width:722px;}
+/*id #descricao {background-color: red; width:722px;} */
+
+#lista-tarefas {border: solid; background-repeat: repeat-x; background-color: yellow;}
+#menu-tarefas { padding: 10px; background-color: #ccDD22; width: 50%; vertical-align: center; border: solid 1px green;}
