@@ -6,6 +6,9 @@
 		<action name="formularioTarefa">
 			<result>/WEB-INF/content/formulario-tarefas.jsp</result>
 		</action>
+		<action name="loginForm">
+			<result>/WEB-INF/content/formulario-login.jsp</result>
+		</action>
 	</package>
 	
 </struts>
