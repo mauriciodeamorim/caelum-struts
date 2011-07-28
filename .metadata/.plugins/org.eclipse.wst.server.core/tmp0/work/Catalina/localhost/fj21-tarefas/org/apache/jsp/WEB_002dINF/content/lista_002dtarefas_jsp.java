@@ -69,6 +69,9 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("<link type=\"text/css\" href=\"css/tarefa.css\" rel=\"stylesheet\"/>\n");
+      out.write("<link type=\"text/css\" href=\"css/jquery.css\" rel=\"stylesheet\"/>\n");
+      out.write("<script type=\"text/javascript\" src=\"js/jquery.js\"></script>\n");
+      out.write("<script type=\"text/javascript\" src=\"js/jquery-ui.js\"></script>\n");
       out.write("<title>Lista tarefas</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
@@ -92,6 +95,13 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t<a href=\"formularioTarefa\">Criar nova tarefa</a>\n");
       out.write("\t</div>\n");
       out.write("</body>\n");
+      out.write("<script type=\"text/javascript\">\n");
+      out.write("\tfunction finalizaAgora(id){\n");
+      out.write("\t\t$.post(\"finalizaTarefa\", {'id': id}, function (){\n");
+      out.write("\t\t\t$(\"#tarefa_\"+id).html(\"Tarefa finalizada\");\n");
+      out.write("\t\t});\n");
+      out.write("\t}\n");
+      out.write("</script>\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -113,9 +123,9 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/content/lista-tarefas.jsp(24,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/content/lista-tarefas.jsp(24,1) '${tarefas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${tarefas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/content/lista-tarefas.jsp(24,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/content/lista-tarefas.jsp(27,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/content/lista-tarefas.jsp(27,1) '${tarefas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${tarefas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/content/lista-tarefas.jsp(27,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("tarefa");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -150,6 +160,10 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
           out.write("\t\t\t<td><a href=\"mostraTarefa?tarefa.id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("\">Alterar</a></td>\n");
+          out.write("\t\t\t");
+          if (_jspx_meth_c_005fif_005f2(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
+            return true;
+          out.write("\n");
           out.write("\t\t</tr>\n");
           out.write("\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
@@ -179,7 +193,7 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/content/lista-tarefas.jsp(28,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/content/lista-tarefas.jsp(31,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.finalizado eq false}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
     if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -208,7 +222,7 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/content/lista-tarefas.jsp(31,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/content/lista-tarefas.jsp(34,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.finalizado eq true}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f1 = _jspx_th_c_005fif_005f1.doStartTag();
     if (_jspx_eval_c_005fif_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -237,9 +251,9 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
     org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag _jspx_th_fmt_005fformatDate_005f0 = (org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag) _005fjspx_005ftagPool_005ffmt_005fformatDate_0026_005fvalue_005fpattern_005fnobody.get(org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag.class);
     _jspx_th_fmt_005fformatDate_005f0.setPageContext(_jspx_page_context);
     _jspx_th_fmt_005fformatDate_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/content/lista-tarefas.jsp(35,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/content/lista-tarefas.jsp(38,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_fmt_005fformatDate_005f0.setValue((java.util.Date) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.dataFinalizado.time}", java.util.Date.class, (PageContext)_jspx_page_context, null, false));
-    // /WEB-INF/content/lista-tarefas.jsp(35,4) name = pattern type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/content/lista-tarefas.jsp(38,4) name = pattern type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_fmt_005fformatDate_005f0.setPattern("dd/MM/yyyy");
     int _jspx_eval_fmt_005fformatDate_005f0 = _jspx_th_fmt_005fformatDate_005f0.doStartTag();
     if (_jspx_th_fmt_005fformatDate_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -247,6 +261,41 @@ public final class lista_002dtarefas_jsp extends org.apache.jasper.runtime.HttpJ
       return true;
     }
     _005fjspx_005ftagPool_005ffmt_005fformatDate_0026_005fvalue_005fpattern_005fnobody.reuse(_jspx_th_fmt_005fformatDate_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fif_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_005fif_005f2.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fif_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
+    // /WEB-INF/content/lista-tarefas.jsp(42,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fif_005f2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.finalizado eq false}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    int _jspx_eval_c_005fif_005f2 = _jspx_th_c_005fif_005f2.doStartTag();
+    if (_jspx_eval_c_005fif_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("\t\t\t\t<td id=\"tarefa_");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write("\">\n");
+        out.write("\t\t\t\t\t<a href=\"#\" onclick=\"finalizaAgora(");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${tarefa.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write(")\"> Finaliza agora</a>\n");
+        out.write("\t\t\t\t</td>\t\n");
+        out.write("\t\t\t");
+        int evalDoAfterBody = _jspx_th_c_005fif_005f2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_005fif_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f2);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f2);
     return false;
   }
 }

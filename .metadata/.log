@@ -1667,3 +1667,34 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:147)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:242)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.server.core 4 0 2011-07-27 20:55:43.359
+!MESSAGE Error starting server Tomcat v6.0 Server at localhost
+!STACK 1
+org.eclipse.core.runtime.CoreException: Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.setupLaunch(TomcatServerBehaviour.java:522)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatLaunchConfigurationDelegate.launch(TomcatLaunchConfigurationDelegate.java:96)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:853)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:702)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:695)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3209)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3159)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:359)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2011-07-27 20:55:43.360
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2011-07-27 20:55:43.362
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2011-07-27 20:56:06.406
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2011-07-27 21:02:04.544
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2011-07-27 21:02:15.367
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2011-07-27 21:02:39.159
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v6.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
