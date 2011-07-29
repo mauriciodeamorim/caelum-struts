@@ -129,7 +129,7 @@
                prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
         -->
 
-      <Context docBase="fj21-tarefas" path="/fj21-tarefas" reloadable="true" source="org.eclipse.jst.jee.server:fj21-tarefas"/></Host>
+      </Host>
     </Engine>
   </Service>
 </Server>

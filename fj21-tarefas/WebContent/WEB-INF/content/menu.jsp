@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>Pagina inicial da Lista de Tarefas</h2>
-	<p>Bem vindo, ${usuarioLogado.login}</p>
+	<p>Bem vindo, ${usuarioLogado.login}</p><div><a href="logout">Sair</a></div>
 	<a href="listaTarefas">Clique aqui</a> para listar as tarefas
 </body>
 </html>
