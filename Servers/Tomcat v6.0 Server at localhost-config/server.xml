@@ -129,7 +129,7 @@
                prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
         -->
 
-      </Host>
+      <Context docBase="controle-produtos" path="/controle-produtos" reloadable="true" source="org.eclipse.jst.jee.server:controle-produtos"/></Host>
     </Engine>
   </Service>
 </Server>
